@@ -1,4 +1,6 @@
 block('header').content()(function() {
+    var i18n = this.require('i18n');
+
     return [
         {
             block: 'logo'
@@ -10,18 +12,18 @@ block('header').content()(function() {
             {
                 block: 'button',
                 mods: { theme: 'islands', size: 'm', view: 'action' },
-                text: 'Написать пост'
+                text: i18n(this.block, 'writePost')
             },
             {
                 block: 'button',
                 mods: { theme: 'islands', size: 'm' },
-                text: 'Выйти'
+                text: i18n(this.block, 'exit')
             }
         ] : {
             block: 'button',
             mix: { block: 'header', elem: 'button' },
             mods: { theme: 'islands', size: 'm', view: 'action' },
-            text: 'Войти с помощью github'
+            text: i18n(this.block, 'loginWithGh')
         }
     ];
 });
